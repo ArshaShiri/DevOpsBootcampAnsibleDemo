@@ -1,0 +1,16 @@
+---
+# Play to configure nginx
+- name: Configure nginx web server
+
+  # you can target a specific server or group 
+  hosts: webserver
+  tasks:
+  - name: install nginx server
+    # apt install nginx
+    apt:
+      name: nginx
+      state: latest
+  - name: start nginx server
+    service:
+      name: nginx
+      state: stopped
