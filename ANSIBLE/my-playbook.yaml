@@ -8,9 +8,22 @@
   - name: install nginx server
     # apt install nginx
     apt:
+      # if we want a specific version:
+      # name: name: nginx=1.18*
+      # state: present
       name: nginx
       state: latest
   - name: start nginx server
     service:
       name: nginx
       state: stopped
+
+  # To stop and uninstall the nginx
+  # - name: uninstall nginx server
+  #   apt:
+  #     name: nginx=1.18*
+  #     state: absent
+  # - name: stop nginx server
+  #   service:
+  #     name: nginx
+  #     state: stopped
